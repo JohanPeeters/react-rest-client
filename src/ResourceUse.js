@@ -8,8 +8,8 @@ class ResourceUse extends Component {
   constructor(options) {
     super(options)
     this.webAuth = new auth0.WebAuth({
-      domain:       `${process.env.DOMAIN}`,
-      clientID:     `${process.env.CLIENT_ID}`
+      domain:       `${process.env.REACT_APP_DOMAIN}`,
+      clientID:     `${process.env.REACT_APP_CLIENT_ID}`
     })
     this.state = {
       email: '',
@@ -19,20 +19,40 @@ class ResourceUse extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  componentDidMount() {
-  }
   handleSubmit = (e) => {
+    e.preventDefault()
     axios({
-      'baseURL': 'https://yorev.eu.auth0.com/oauth',
-      'url': 'token',
-      'method': 'post'
-
+      'baseURL': `https://${process.env.REACT_APP_DOMAIN}/oauth`,
+      'url': '/token',
+      'method': 'post',
+      'data': {
+        audience: 'backend',
+        username: this.state.email,
+        password: this.state.password,
+        grant_type: 'password',
+        client_id: process.env.REACT_APP_CLIENT_ID,
+        client_secret: process.env.REACT_APP_CLIENT_SECRET
+      }
     }).then((res) => {
-      this.setState({message: res.data})
+      axios({
+          baseURL: 'https://x2ba7g748k.execute-api.eu-west-1.amazonaws.com/demo',
+          url: '/resourceUse',
+          headers: {
+            'Authorization': `Bearer ${res.data.access_token}`
+          }
+      })
+      .then((res) => {
+        this.setState({
+          message: res.data,
+          authenticated: true
+        })
+      })
     })
   }
   handleChange = (e) => {
-    this.setState({[e.target.id]: e.target.value});
+    this.setState({
+      [e.target.id]: e.target.value
+    })
   }
   render() {
     if(!this.state.authenticated) return(
@@ -54,9 +74,7 @@ class ResourceUse extends Component {
                   onChange={this.handleChange}
                 />
               </FormGroup>
-              <Button
-                type="submit"
-              >
+              <Button type="submit">
                 Get my resource use
               </Button>
             </form>
