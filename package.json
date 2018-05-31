@@ -1,0 +1,24 @@
+{
+  "name": "react-rest-client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "auth-js": "0.0.14",
+    "auth0-js": "^9.5.1",
+    "axios": "^0.18.0",
+    "bootstrap": "^3.3.7",
+    "react": "^16.4.0",
+    "react-axios": "^2.0.0",
+    "react-bootstrap": "^0.32.1",
+    "react-dom": "^16.4.0",
+    "react-json": "^0.2.1",
+    "react-json-view": "^1.16.6",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
