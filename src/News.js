@@ -9,7 +9,7 @@ class News extends Component {
   }
   componentDidMount() {
     axios.request({
-        baseURL: 'https://x2ba7g748k.execute-api.eu-west-1.amazonaws.com/demo',
+        baseURL: process.env.REACT_APP_API,
         url: '/news'
         ,headers: {'x-api-key': 'P0Cjq2Ud7h8GUqWeRT8Cs6ydi0hFuEMvaI2b191I'}
     }).then(res => {

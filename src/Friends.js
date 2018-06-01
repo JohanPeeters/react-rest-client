@@ -19,7 +19,7 @@ class Friends extends Component {
     this.webAuth.parseHash((err, authResult) => {
         if (authResult && authResult.accessToken) {
           axios({
-            baseURL: 'https://x2ba7g748k.execute-api.eu-west-1.amazonaws.com/demo',
+            baseURL: process.env.REACT_APP_API,
             url: '/friends',
                 headers: {
                   'Authorization': `Bearer ${authResult.accessToken}`

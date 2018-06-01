@@ -30,7 +30,7 @@ class ResourceUse extends Component {
       }
     }).then((res) => {
       axios({
-          baseURL: 'https://x2ba7g748k.execute-api.eu-west-1.amazonaws.com/demo',
+          baseURL: process.env.REACT_APP_API,
           url: '/resourceUse',
           headers: {
             'Authorization': `Bearer ${res.data.access_token}`
