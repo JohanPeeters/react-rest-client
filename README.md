@@ -1,9 +1,11 @@
-This project supports the I T.A.K.E. 2018 workshop on REST Identity and Access Management. It illustrates 3 different strategies for gaining access to a backend API from a client:
+This project supports the I T.A.K.E. 2018 workshop on REST Identity and Access Management. It illustrates 3 different API access control strategies on a React client:
 * API keys
 * OAuth 2.0 Resource Owner Password Credentials grant
 * OpenID Connect Implicit Flow
 
 The project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app) and can be extended as such.
+
+The client has only been tested with an Auth0 authorization server. Given that it uses an Auth0 proprietary library for the OpenID Connect Implicit Flow, it is likely to not work completely as expected with other authorization servers.
 
 ## Folder Structure
 
