@@ -1,23 +1,18 @@
 import React, { Component } from 'react';
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap"
 import axios from 'axios'
-import auth0 from 'auth0-js'
 
 class ResourceUse extends Component {
 
   constructor(options) {
     super(options)
-    this.webAuth = new auth0.WebAuth({
-      domain:       `${process.env.REACT_APP_DOMAIN}`,
-      clientID:     `${process.env.REACT_APP_CLIENT_ID}`
-    })
     this.state = {
       email: '',
       password: ''
     }
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
   handleSubmit = (e) => {
     e.preventDefault()

@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import './App.css'
-import axios from 'axios'
 import News from './News'
 import ResourceUse from './ResourceUse'
 import Friends from './Friends'
