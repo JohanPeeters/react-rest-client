@@ -34,6 +34,14 @@ react-rest-client/
   package.json
   README.md
 ```
+## Installing
+
+```sh
+git clone git@github.com:JohanPeeters/react-rest-client.git
+```
+
+Prerequisite: Node.js
+
 ## Running the application
 
 In order to run the project, you must point it to a valid authorization server and backend. The `.env` file does this. The values supplied should work for now, but you are encouraged to experiment with an authorization server under your own control and supply your own API.
@@ -49,7 +57,7 @@ It can be viewed in the browser at [http://localhost:3000](http://localhost:3000
 
 ## To do
 
-The project focuses on understanding authentication and authorization from the client's perspective. In the interest of simplicity, it some essential feature and best practices are omitted.
+The project focuses on understanding authentication and authorization from the client's perspective. In the interest of simplicity, some essential feature and best practices are omitted.
 
 ### Error handling
 
