@@ -9,32 +9,27 @@ The client has only been tested with an Auth0 authorization server. Given that i
 
 ## Installing
 
-Prerequisites:
-* Node.js
-* git
-
 ```
 git clone git@github.com:JohanPeeters/react-rest-client.git
 cd react-rest-client
 npm install
 ```
+Prerequisites:
+* Node.js
+* git
 
 ## Running the application
 
 In order to run the project, you must point it to a valid authorization server and backend. Change the `.env` file to do so. Values supplied should work for now, but you are encouraged to experiment with an authorization server under your own control and supply your own API.
 
-In the project directory, you can run:
-
-```sh
+```
 npm start
 ```
 
-This runs the app in development mode.
+in the local repo runs the app in development mode.
 It can be viewed in the browser at [http://localhost:3000](http://localhost:3000).
 
 ## Folder Structure
-
-The project has the following structure:
 
 ```
 react-rest-client/
@@ -57,9 +52,9 @@ react-rest-client/
   README.md
 ```
 
-## To do
+## Caveats
 
-The project focuses on understanding authentication and authorization from the client's perspective. In the interest of simplicity, some essential feature and best practices are omitted.
+The project focuses on understanding authentication and authorization from the client's perspective. In the interest of simplicity, essential features and best practices are omitted. Some are listed below.
 
 ### Error handling
 
