@@ -69,6 +69,6 @@ Remote calls may fail, yet this project does not provide any error handling.
 
 The app requires an interaction with the authorization server for each call to the backend. End users expect to only have to sign in once.
 
-### Seperate URL for callback
+### Separate URL for callback
 
 The usual practice for parsing authentication and authorization results returned by the authorization server is to route to a dedicated React component for parsing the results on a separate URL. However, this project avoids the complexity of a React router by attempting to parse authN/Z results regardless of whether a redirect took place. This is somewhat inelegant and probably consumes resources unnecessarily.
