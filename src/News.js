@@ -10,8 +10,8 @@ class News extends Component {
   componentDidMount() {
     axios.request({
         baseURL: process.env.REACT_APP_API,
-        url: '/news'
-        ,headers: {'x-api-key': 'P0Cjq2Ud7h8GUqWeRT8Cs6ydi0hFuEMvaI2b191I'}
+        url: '/news',
+        headers: {'x-api-key': process.env.REACT_APP_API_KEY}
     }).then(res => {
       this.setState({message: res.data})
     })
