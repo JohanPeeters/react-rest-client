@@ -54,7 +54,7 @@ react-rest-client/
 
 ## Caveats
 
-The project focuses on understanding authentication and authorization from the client's perspective. In the interest of simplicity, essential features and best practices are omitted. Some are listed below.
+The project focuses on understanding authentication and authorization from the client's perspective. In the interest of simplicity, there are essential features and best practices missing. Some are listed below.
 
 ### Error handling
 
@@ -62,8 +62,4 @@ Remote calls may fail, yet this project does not provide any error handling.
 
 ### SSO
 
-The app requires an interaction with the authorization server for each call to the backend. End users expect to only have to sign in once.
-
-### Separate URL for callback
-
-The usual practice for parsing authentication and authorization results returned by the authorization server is to route to a dedicated React component for parsing the results on a separate URL. However, this project avoids the complexity of a React router by attempting to parse authN/Z results regardless of whether a redirect took place. This is somewhat inelegant and probably consumes resources unnecessarily.
+This app requires an interaction with the authorization server for each call to the backend. Nowadays, end users expect to only have to sign in once.

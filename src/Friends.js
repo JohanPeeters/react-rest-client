@@ -16,7 +16,8 @@ class Friends extends Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
   componentWillMount() {
-    this.webAuth.parseHash((err, authResult) => {
+    (window.location.hash &&
+      this.webAuth.parseHash((err, authResult) => {
         if (authResult && authResult.accessToken) {
           axios({
             baseURL: process.env.REACT_APP_API,
@@ -30,10 +31,10 @@ class Friends extends Component {
                 message: res.data
               })
             })
-        } else if (err) {
-          console.log(err)
+          }
         }
-      })
+      )
+    )
   }
   handleSubmit = (e) => {
     e.preventDefault()
