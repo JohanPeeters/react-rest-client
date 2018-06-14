@@ -26,7 +26,6 @@ class ResourceUse extends Component {
         password: this.state.password,
         grant_type: 'password',
         client_id: process.env.REACT_APP_CLIENT_ID,
-        client_secret: process.env.REACT_APP_CLIENT_SECRET,
         scope: 'read:resourceUse'
       }
     }).then((res) => {
